@@ -2,8 +2,8 @@ lazy_static::lazy_static! {
 pub static ref T: std::collections::HashMap<&'static str, &'static str> =
     [
         ("Status", "状态"),
-        ("Your Desktop", "你的桌面"),
-        ("desk_tip", "你的桌面可以通过下面的 ID 和密码访问。"),
+        ("Your Desktop", "vancat pro 自构建版"),
+        ("desk_tip", "可以通过下面的 ID 和密码访问。"),
         ("Password", "密码"),
         ("Ready", "就绪"),
         ("Established", "已建立"),
@@ -737,7 +737,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("rel-mouse-exit-{}-tip", "按下 {} 退出"),
         ("rel-mouse-permission-lost-tip", "键盘权限被撤销。相对鼠标模式已被禁用。"),
         ("Changelog", "更新日志"),
-        ("keep-awake-during-outgoing-sessions-label", ""),
-        ("keep-awake-during-incoming-sessions-label", ""),
+        ("keep-awake-during-outgoing-sessions-label", "在传出会话期间保持屏幕唤醒"),
+        ("keep-awake-during-incoming-sessions-label", "在传入会话期间保持屏幕唤醒"),
     ].iter().cloned().collect();
 }
