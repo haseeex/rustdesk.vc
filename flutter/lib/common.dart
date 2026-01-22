@@ -376,7 +376,7 @@ class MyTheme {
     useMaterial3: false,
     brightness: Brightness.light,
     hoverColor: Color.fromARGB(255, 224, 224, 224),
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: const Color.fromARGB(183, 255, 255, 255),
     dialogBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
@@ -454,7 +454,7 @@ class MyTheme {
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
     colorScheme: ColorScheme.light(
-        primary: Colors.blue, secondary: accent, background: grayBg),
+      primary: Colors.blue, secondary: accent, background: const Color.fromARGB(182, 255, 255, 255)),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -4111,4 +4111,33 @@ String mouseButtonsToPeer(int buttons) {
     default:
       return '';
   }
+}
+
+
+
+//我的图片
+Widget loadVCIcon(double size) {
+  return Image.asset('assets/vcImages/90251277_p0.jpg',
+      width: size,
+      height: size,
+      errorBuilder: (ctx, error, stackTrace) => SvgPicture.asset(
+            'assets/icon.svg',
+            width: size,
+            height: size,
+          ));
+}
+
+Widget loadVCIconAuto() {
+  return Image.asset(
+    'assets/vcImages/90251277_p0.jpg',
+    width: double.infinity,
+    height: double.infinity,
+    fit: BoxFit.cover,
+    errorBuilder: (ctx, error, stackTrace) => SvgPicture.asset(
+      'assets/icon.svg',
+      width: double.infinity,
+      height: double.infinity,
+      fit: BoxFit.cover,
+    ),
+  );
 }

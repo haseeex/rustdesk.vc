@@ -61,12 +61,20 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     super.build(context);
     final isIncomingOnly = bind.isIncomingOnly();
     return _buildBlock(
-        child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
       children: [
-        buildLeftPane(context),
-        if (!isIncomingOnly) const VerticalDivider(width: 1),
-        if (!isIncomingOnly) Expanded(child: buildRightPane(context)),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 0.0),
+          child: loadVCIconAuto(),
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            buildLeftPane(context),
+            if (!isIncomingOnly) const VerticalDivider(width: 1),
+            if (!isIncomingOnly) Expanded(child: buildRightPane(context)),
+          ],
+        )
       ],
     ));
   }
