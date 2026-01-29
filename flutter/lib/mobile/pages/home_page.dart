@@ -102,7 +102,19 @@ class HomePageState extends State<HomePage> {
               }
             }),
           ),
-          body: _pages.elementAt(_selectedIndex),
+          // body: _pages.elementAt(_selectedIndex),
+          // VC: 安卓也使用背景图片
+          body: Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 0.0),
+                child: IgnorePointer(
+                  child: loadVCIconAuto(),
+                  ),
+                ),
+              _pages.elementAt(_selectedIndex),
+            ],
+          ),
         ));
   }
 
