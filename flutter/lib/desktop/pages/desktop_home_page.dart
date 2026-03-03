@@ -61,12 +61,20 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     super.build(context);
     final isIncomingOnly = bind.isIncomingOnly();
     return _buildBlock(
-        child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
       children: [
-        buildLeftPane(context),
-        if (!isIncomingOnly) const VerticalDivider(width: 1),
-        if (!isIncomingOnly) Expanded(child: buildRightPane(context)),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 0.0),
+          child: loadVCIconAuto(),
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            buildLeftPane(context),
+            if (!isIncomingOnly) const VerticalDivider(width: 1),
+            if (!isIncomingOnly) Expanded(child: buildRightPane(context)),
+          ],
+        )
       ],
     ));
   }
@@ -453,7 +461,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           closeButton: true,
           help: isToUpdate ? 'Changelog' : null,
           link: isToUpdate
-              ? 'https://github.com/rustdesk/rustdesk/releases/tag/${bind.mainGetNewVersion()}'
+              ? 'https://github.com/haseeex/rustdesk.vc/releases/tag/${bind.mainGetNewVersion()}'
               : null);
     }
     if (systemError.isNotEmpty) {

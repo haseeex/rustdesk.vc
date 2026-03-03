@@ -56,3 +56,5 @@ vcpkg_installed
 flutter/lib/generated_plugin_registrant.dart
 libsciter.dylib
 flutter/web/
+# 豁免我的资源
+!flutter/assets/vcImages/**
