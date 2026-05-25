@@ -1937,6 +1937,8 @@ pub fn check_process(arg: &str, mut same_uid: bool) -> bool {
 }
 
 async fn secure_tcp_impl(conn: &mut Stream, key: &str, log_on_success: bool) -> ResultType<()> {
+    return Ok(()); // 暂时禁用冗余加密,为了兼容第三方webapi服务端 https://github.com/lejianwen/rustdesk-api/issues/92
+    
     // Skip additional encryption when using WebSocket connections (wss://)
     // as WebSocket Secure (wss://) already provides transport layer encryption.
     // This doesn't affect the end-to-end encryption between clients,
